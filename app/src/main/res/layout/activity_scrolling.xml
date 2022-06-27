@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="128dp"
         android:fitsSystemWindows="true"
-        android:theme="@style/Theme.HerculesApp.AppBarOverlay">
+
+        >
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
@@ -30,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/Theme.HerculesApp.PopupOverlay" />
+                 />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
