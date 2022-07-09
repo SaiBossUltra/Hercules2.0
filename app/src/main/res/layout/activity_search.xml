@@ -156,7 +156,7 @@
         app:srcCompat="@drawable/hygieia_logo" />
 
     <Button
-        android:id="@+id/logout2"
+        android:id="@+id/logout3"
         android:layout_width="132dp"
         android:layout_height="79dp"
         android:layout_marginStart="11dp"

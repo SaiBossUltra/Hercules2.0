@@ -17,7 +17,7 @@ class SearchActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val logout: Button = findViewById (R.id.logout2)
+        val logout: Button = findViewById (R.id.logout3)
 
         logout.setOnClickListener() {
             val intent = Intent(this, MainActivity::class.java)
