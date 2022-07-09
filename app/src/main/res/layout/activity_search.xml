@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
 
-    <Button
-        android:id="@+id/placesBtn"
-        android:layout_width="158dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="228dp"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="#009688"
-        android:fontFamily="sans-serif-light"
-        android:text="Places"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="412dp"
@@ -46,17 +32,44 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar2" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-light"
-        android:text="Please enter the following information to find medical services near you:"
+        android:text="Reason for appointment:"
         android:textColor="#009688"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="362dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:textColor="#009688"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:text="Enter response" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Please enter the following information to find services near you:"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -68,11 +81,10 @@
         android:fontFamily="sans-serif-light"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/country"
+        android:text="Country"
         android:textColor="#009688"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -84,11 +96,10 @@
         android:fontFamily="sans-serif-light"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/state"
+        android:text="State"
         android:textColor="#009688"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
@@ -100,48 +111,84 @@
         android:fontFamily="sans-serif-light"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/zipcode"
+        android:text="City"
         android:textColor="#009688"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+
+    <EditText
+        android:id="@+id/editTextTextPostalAddress2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPostalAddress"
+        android:minHeight="48dp"
+        android:textColor="#009688"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        tools:text="Address" />
 
     <Button
-        android:id="@+id/peopleBtn"
-        android:layout_width="158dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="35dp"
+        android:id="@+id/SearchBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#009688"
         android:fontFamily="sans-serif-light"
-        android:text="People"
+        android:text="Submit"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress2" />
 
     <ImageView
         android:id="@+id/hygieia_logo"
         android:layout_width="76dp"
         android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/peopleBtn"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress2"
         app:srcCompat="@drawable/hygieia_logo" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="60dp"
-        android:fontFamily="sans-serif-light"
-        android:text="Looking for:"
-        android:textColor="#009688"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+    <Button
+        android:id="@+id/logout3"
+        android:layout_width="132dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="11dp"
+        android:backgroundTint="#009688"
+        android:text="sign out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/SearchBtn" />
+
+    <Button
+        android:id="@+id/SearchBtn2"
+        android:layout_width="126dp"
+        android:layout_height="77dp"
+        android:backgroundTint="#009688"
+        android:text="Search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="133dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="#009688"
+        android:text="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/SearchBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
