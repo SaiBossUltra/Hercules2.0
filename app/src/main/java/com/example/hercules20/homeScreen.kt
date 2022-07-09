@@ -17,7 +17,7 @@ class homeScreen : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val search: Button = findViewById (R.id.SearchBtn)
+        val search: Button = findViewById (R.id.peopleBtn)
 
         search.setOnClickListener() {
             val intent = Intent(this, SearchActivity::class.java)
