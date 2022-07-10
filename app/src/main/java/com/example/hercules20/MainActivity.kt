@@ -10,7 +10,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hercules20.databinding.ActivityMainBinding
-import com.example.hercules20.databinding.ActivityScrollingBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
     private fun checkUser() {
         val firebaseUser = firebaseAuth.currentUser
         if(firebaseUser != null){
-           //user is alr logged in
+            //user is alr logged in
             //start profile activity
             startActivity(Intent(this@MainActivity, homeScreen::class.java))
             finish()
