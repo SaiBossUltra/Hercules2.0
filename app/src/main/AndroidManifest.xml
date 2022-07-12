@@ -19,11 +19,6 @@
             android:name=".DoctorProfile"
             android:exported="false" />
         <activity
-            android:name=".ScrollingActivity"
-            android:exported="false"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.Hercules20.NoActionBar" />
-        <activity
             android:name=".SearchActivity"
             android:exported="false" />
         <activity

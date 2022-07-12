@@ -168,7 +168,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/Doc1TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
@@ -185,7 +185,7 @@
         android:layout_marginTop="55dp"
         android:text="Doc3 Name"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/Doc1TV" />
 
     <TextView
         android:id="@+id/textView15"

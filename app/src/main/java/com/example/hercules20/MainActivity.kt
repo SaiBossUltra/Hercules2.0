@@ -17,6 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.lang.Exception
 
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
 
     private  lateinit var googleSignInClient: GoogleSignInClient
     private  lateinit var firebaseAuth: FirebaseAuth
+
+    val db = Firebase.firestore
 
     private companion object{
         private const val RC_SIGN_IN = 100
@@ -53,6 +56,8 @@ class MainActivity : AppCompatActivity() {
             val intent = googleSignInClient.signInIntent
             startActivityForResult(intent, RC_SIGN_IN)
         }
+
+
 
 
 
@@ -105,12 +110,12 @@ class MainActivity : AppCompatActivity() {
 
                 //check if user is new or existing
                 if(authResult.additionalUserInfo!!.isNewUser){
-                    Log.d(TAG, "firebaseAuthWithGoogleAccount: Account created... /n$email")
-                    Toast.makeText(this@MainActivity, "Account created... /n$email", Toast.LENGTH_SHORT).show()
+                    Log.d(TAG, "firebaseAuthWithGoogleAccount: Account created... /n$name")
+                    Toast.makeText(this@MainActivity, "Welcome... $name", Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    Log.d(TAG, "firebaseAuthWithGoogleAccount: Existing User... /n$email")
-                    Toast.makeText(this@MainActivity, "LoggedIn... /n$email", Toast.LENGTH_SHORT).show()
+                    Log.d(TAG, "firebaseAuthWithGoogleAccount: Existing User... /n$name")
+                    Toast.makeText(this@MainActivity, "Welcome... $name", Toast.LENGTH_SHORT).show()
                 }
 
                 //start profile activity
