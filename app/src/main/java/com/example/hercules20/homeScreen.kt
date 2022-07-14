@@ -12,13 +12,14 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat.startActivity
 import com.example.hercules20.databinding.ActivityHomeScreenBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.database.DatabaseReference
+//import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class homeScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeScreenBinding
-
+    private lateinit var database : DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
 
     @RequiresApi(Build.VERSION_CODES.R)
@@ -26,8 +27,6 @@ class homeScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
 
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser() //27:22
@@ -40,21 +39,21 @@ class homeScreen : AppCompatActivity() {
         var currentUser = firebaseAuth.currentUser
 
         //loadAllData(currentUser!!.uid.toString())
-        val db = Firebase.firestore
-        db.collection("doctors")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
-
-                    if(document.id == "1234"){
-                        binding.Doc1TV.text = document.data.toString().subSequence(45,60)
-                    }
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents.", exception)
-            }
+//        val db = Firebase.firestore
+//        db.collection("doctors")
+//            .get()
+//            .addOnSuccessListener { result ->
+//                for (document in result) {
+//                    Log.d(TAG, "${document.id} => ${document.data}")
+//
+//                    if(document.id == "1234"){
+//                        binding.Doc1TV.text = document.data.toString().subSequence(45,60)
+//                    }
+//                }
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.w(TAG, "Error getting documents.", exception)
+//            }
 
 
 
@@ -84,33 +83,33 @@ class homeScreen : AppCompatActivity() {
 
         val search: Button = findViewById (R.id.SearchBtn)
         search.setOnClickListener() {
-            val intent = Intent(this, SearchActivity::class.java)
+            val intent = Intent(this, DoctorProfile::class.java)
             startActivity(intent)
         }
     }
 
-     fun loadAllData(userID: String) {
-         val db = Firebase.firestore
-
-         val taskList = ArrayList<TaskModel>()
-        var ref = db.collection("doctors")
-         ref.get()
-             .addOnSuccessListener {
-
-                 if(it.isEmpty){
-                     Toast.makeText(this@homeScreen, "No Task found", Toast.LENGTH_SHORT).show()
-                     return@addOnSuccessListener
-                 }
-
-                 for(doc in it){
-                     val taskModel = doc.toObject(TaskModel::class.java)
-                     taskList.add(taskModel)
-
-                 }
-
-
-             }
-    }
+//     fun loadAllData(userID: String) {
+//         val db = Firebase.firestore
+//
+//         val taskList = ArrayList<TaskModel>()
+//        var ref = db.collection("doctors")
+//         ref.get()
+//             .addOnSuccessListener {
+//
+//                 if(it.isEmpty){
+//                     Toast.makeText(this@homeScreen, "No Task found", Toast.LENGTH_SHORT).show()
+//                     return@addOnSuccessListener
+//                 }
+//
+//                 for(doc in it){
+//                     val taskModel = doc.toObject(TaskModel::class.java)
+//                     taskList.add(taskModel)
+//
+//                 }
+//
+//
+//             }
+//    }
 
     private fun checkUser() {
         //get current user

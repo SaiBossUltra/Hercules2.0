@@ -17,7 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.firestore.ktx.firestore
+//import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.lang.Exception
 
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private  lateinit var googleSignInClient: GoogleSignInClient
     private  lateinit var firebaseAuth: FirebaseAuth
 
-    val db = Firebase.firestore
+//    val db = Firebase.firestore
 
     private companion object{
         private const val RC_SIGN_IN = 100
